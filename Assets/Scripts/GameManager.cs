@@ -10,8 +10,14 @@ public class GameManager : MonoBehaviour
     public GameObject playButton;
     public GameObject gameOver;
 
+    public GameObject getReady;
+
     private void Awake()
     {
+        playButton.SetActive(true);
+        getReady.SetActive(true);
+        gameOver.SetActive(false);
+
         Application.targetFrameRate = 60;
         Pause();
 
@@ -25,6 +31,7 @@ public class GameManager : MonoBehaviour
         
         playButton.SetActive(false);
         gameOver.SetActive(false);
+        getReady.SetActive(false);
 
         Time.timeScale = 1f;
         player.enabled = true;
